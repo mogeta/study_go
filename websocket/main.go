@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+	http.Handle("/", http.FileServer(http.Dir("dart/build/web")))
 	http.Handle("/echo", websocket.Handler(EchoHandler))
 	err := http.ListenAndServe(":12345", nil)
 	if err != nil {
