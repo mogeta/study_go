@@ -23,6 +23,13 @@ outputMsg(String msg) {
   output.text = text;
 }
 
+sendMessage(){
+  querySelector('#button') // Get an object.
+    ..text = 'Confirm'   // Use its members.
+    ..classes.add('important')
+    ..onClick.listen((e) => window.alert('Confirmed!'));
+}
+
 void initWebSocket([int retrySeconds = 2]) {
   var reconnectScheduled = false;
 
@@ -58,4 +65,5 @@ void initWebSocket([int retrySeconds = 2]) {
 
 void main() {
   initWebSocket();
+  sendMessage();
 }
