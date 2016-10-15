@@ -27,7 +27,7 @@ sendMessage(){
   querySelector('#button') // Get an object.
     ..text = 'Confirm'   // Use its members.
     ..classes.add('important')
-    ..onClick.listen((e) => window.alert('Confirmed!'));
+    ..onClick.listen((e) => outputMsg('send message'));
 }
 
 void initWebSocket([int retrySeconds = 2]) {
